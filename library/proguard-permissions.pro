@@ -32,8 +32,8 @@
 #    结论是没有问题的，放心大胆用，我帮大家测试过了，是完全可行的，不信可以拿 apk 反编译看看，
 #    在开启 android.enableJetifier=true 的时候编译器会自动帮你转换成 AndroidX 的包名，
 #    所以完全没有必要在这里多写一个 AndroidX 的版本混淆规则，那样做才是多此一举，没有任何意义。
--keepclassmembers class android.support.v4.app.Fragment {
-    android.support.v4.app.FragmentActivity getActivity();
+-keepclassmembers class androidx.fragment.app.Fragment {
+    androidx.fragment.app.FragmentActivity getActivity();
 }
 #-keepclassmembers class androidx.fragment.app.Fragment {
 #    androidx.fragment.app.FragmentActivity getActivity();

@@ -217,12 +217,12 @@ XXPermissions.startPermissionActivity(@NonNull Fragment appFragment, @NonNull IP
 XXPermissions.startPermissionActivity(@NonNull Fragment appFragment, @NonNull List<IPermission> permissions, @Nullable OnPermissionCallback callback);
 
 // Navigate to the permission settings page (Support Fragment version)
-XXPermissions.startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment);
-XXPermissions.startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment, @NonNull IPermission... permissions);
-XXPermissions.startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment, @NonNull List<IPermission> permissions);
-XXPermissions.startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment, @NonNull List<IPermission> permissions, @IntRange(from = 1, to = 65535) int requestCode);
-XXPermissions.startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment, @NonNull IPermission permission, @Nullable OnPermissionCallback callback);
-XXPermissions.startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment, @NonNull List<IPermission> permissions, @Nullable OnPermissionCallback callback);
+XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment);
+XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment, @NonNull IPermission... permissions);
+XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment, @NonNull List<IPermission> permissions);
+XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment, @NonNull List<IPermission> permissions, @IntRange(from = 1, to = 65535) int requestCode);
+XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment, @NonNull IPermission permission, @Nullable OnPermissionCallback callback);
+XXPermissions.startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment, @NonNull List<IPermission> permissions, @Nullable OnPermissionCallback callback);
 
 // Set the permission description provider (Global setting)
 XXPermissions.setPermissionDescription(Class<? extends OnPermissionDescription> clazz);

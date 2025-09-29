@@ -1,11 +1,11 @@
 package com.hjq.permissions.fragment.impl.support;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import com.hjq.permissions.fragment.IFragmentMethod;
 import com.hjq.permissions.core.OnPermissionFragmentCallback;
 
@@ -13,7 +13,7 @@ import com.hjq.permissions.core.OnPermissionFragmentCallback;
  *    author : Android 轮子哥
  *    github : https://github.com/getActivity/XXPermissions
  *    time   : 2025/05/20
- *    desc   : 权限 Fragment 类（ {@link android.support.v4.app.Fragment} ）
+ *    desc   : 权限 Fragment 类（ {@link androidx.fragment.app.Fragment} ）
  */
 public abstract class PermissionSupportFragment extends Fragment implements IFragmentMethod<FragmentActivity, FragmentManager> {
 

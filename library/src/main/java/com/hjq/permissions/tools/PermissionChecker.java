@@ -3,8 +3,8 @@ package com.hjq.permissions.tools;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.hjq.permissions.manifest.AndroidManifestInfo;
 import com.hjq.permissions.permission.base.IPermission;
 import java.lang.reflect.Field;
@@ -46,9 +46,9 @@ public final class PermissionChecker {
     }
 
     /**
-     * 检查 {@link android.support.v4.app.Fragment} 对象的状态是否正常
+     * 检查 {@link androidx.fragment.app.Fragment} 对象的状态是否正常
      */
-    public static void checkSupportFragmentStatus(@NonNull android.support.v4.app.Fragment supportFragment) {
+    public static void checkSupportFragmentStatus(@NonNull androidx.fragment.app.Fragment supportFragment) {
         if (!supportFragment.isAdded()) {
             // 这个 Fragment 没有添加绑定
             throw new IllegalStateException("This support fragment has no binding added, " +

@@ -3,10 +3,10 @@ package com.hjq.permissions;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 import com.hjq.permissions.fragment.factory.PermissionFragmentFactory;
 import com.hjq.permissions.fragment.factory.PermissionFragmentFactoryByApp;
 import com.hjq.permissions.fragment.factory.PermissionFragmentFactoryBySupport;
@@ -55,7 +55,7 @@ public final class XXPermissions {
         return new XXPermissions(appFragment);
     }
 
-    public static XXPermissions with(@NonNull android.support.v4.app.Fragment supportFragment) {
+    public static XXPermissions with(@NonNull androidx.fragment.app.Fragment supportFragment) {
         return new XXPermissions(supportFragment);
     }
 
@@ -127,7 +127,7 @@ public final class XXPermissions {
 
     /** Support 库中的 Fragment 对象 */
     @Nullable
-    private android.support.v4.app.Fragment mSupportFragment;
+    private androidx.fragment.app.Fragment mSupportFragment;
 
     /** 权限请求拦截器 */
     @Nullable
@@ -150,7 +150,7 @@ public final class XXPermissions {
         mContext = appFragment.getActivity();
     }
 
-    private XXPermissions(@NonNull android.support.v4.app.Fragment supportFragment) {
+    private XXPermissions(@NonNull androidx.fragment.app.Fragment supportFragment) {
         mSupportFragment = supportFragment;
         mContext = supportFragment.getActivity();
     }
@@ -227,7 +227,7 @@ public final class XXPermissions {
 
         final Fragment appFragment = mAppFragment;
 
-        final android.support.v4.app.Fragment supportFragment = mSupportFragment;
+        final androidx.fragment.app.Fragment supportFragment = mSupportFragment;
 
         final OnPermissionInterceptor permissionInterceptor = mPermissionInterceptor;
 
@@ -522,23 +522,23 @@ public final class XXPermissions {
         });
     }
 
-    /* android.support.v4.app.Fragment */
+    /* androidx.fragment.app.Fragment */
 
-    public static void startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment) {
+    public static void startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment) {
         startPermissionActivity(supportFragment, new ArrayList<>());
     }
 
-    public static void startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment,
+    public static void startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment,
                                                @NonNull IPermission... permissions) {
         startPermissionActivity(supportFragment, PermissionUtils.asArrayList(permissions));
     }
 
-    public static void startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment,
+    public static void startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment,
                                                @NonNull List<IPermission> permissions) {
         startPermissionActivity(supportFragment, permissions, REQUEST_CODE);
     }
 
-    public static void startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment,
+    public static void startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment,
                                                @NonNull List<IPermission> permissions,
                                                @IntRange(from = 1, to = 65535) int requestCode) {
         if (PermissionUtils.isFragmentUnavailable(supportFragment)) {
@@ -556,13 +556,13 @@ public final class XXPermissions {
             PermissionApi.getBestPermissionSettingIntent(activity, permissions, true), requestCode);
     }
 
-    public static void startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment,
+    public static void startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment,
                                                @NonNull IPermission permission,
                                                @Nullable OnPermissionCallback callback) {
         startPermissionActivity(supportFragment, PermissionUtils.asArrayList(permission), callback);
     }
 
-    public static void startPermissionActivity(@NonNull android.support.v4.app.Fragment supportFragment,
+    public static void startPermissionActivity(@NonNull androidx.fragment.app.Fragment supportFragment,
                                                @NonNull List<IPermission> permissions,
                                                @Nullable OnPermissionCallback callback) {
         if (PermissionUtils.isFragmentUnavailable(supportFragment)) {
@@ -595,7 +595,7 @@ public final class XXPermissions {
 
     @NonNull
     private static PermissionFragmentFactory<?, ?> generatePermissionFragmentFactory(@NonNull Activity activity,
-                                                                                     @Nullable android.support.v4.app.Fragment supportFragment) {
+                                                                                     @Nullable androidx.fragment.app.Fragment supportFragment) {
         return generatePermissionFragmentFactory(activity, supportFragment, null);
     }
 
@@ -606,7 +606,7 @@ public final class XXPermissions {
     }
 
     private static PermissionFragmentFactory<?, ?> generatePermissionFragmentFactory(@NonNull Activity activity,
-                                                                                     @Nullable android.support.v4.app.Fragment supportFragment,
+                                                                                     @Nullable androidx.fragment.app.Fragment supportFragment,
                                                                                      @Nullable Fragment appFragment) {
         final PermissionFragmentFactory<?, ?> fragmentFactory;
         if (supportFragment != null) {
