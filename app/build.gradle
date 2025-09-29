@@ -48,7 +48,8 @@ dependencies {
     // 依赖 libs 目录下所有的 jar 和 aar 包
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
 
-    implementation project(':library')
+//    implementation project(':library')
+    implementation("com.github.simplepeng:XXPermissions:26.5")
 
     // 谷歌兼容库：https://developer.android.google.cn/jetpack/androidx/releases/appcompat?hl=zh-cn
     // noinspection GradleCompatible
